@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bad Weather App</title>
+
+<style>
+body{
+    margin:0;
+    background:#f7f7f4;
+    color:#202020;
+    font-family:Arial,sans-serif
+}
+
+.app{
+    min-height:100vh
+}
+
+.wrap{
+    max-width:980px;
+    margin:auto;
+    padding:24px 24px 60px
+}
+
+.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:8px 0 45px;
+    border-bottom:2px solid #202020
+}
+
+.brand{
+    font-weight:700
+}
+
+.tag{
+    font-size:13px
+}
+
+.hero{
+    display:grid;
+    grid-template-columns:1fr .75fr;
+    gap:45px;
+    align-items:center;
+    padding:55px 0 65px
+}
+
+.eyebrow{
+    text-transform:uppercase;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.08em
+}
+
+h1{
+    font-size:clamp(48px,7vw,82px);
+    line-height:.95;
+    margin:12px 0 22px;
+    max-width:700px
+}
+
+h1 span{
+    display:block
+}
+
+.lead{
+    font-size:18px;
+    line-height:1.55;
+    max-width:620px
+}
+
+.section{
+    padding:55px 0;
+    border-top:2px solid #202020
+}
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    gap:25px;
+    align-items:end;
+    margin-bottom:22px
+}
+
+h2{
+    font-size:32px;
+    margin:0
+}
+
+.section-head p{
+    max-width:500px;
+    line-height:1.55;
+    margin:0
+}
+
+.video{
+    background:#111;
+    border:2px solid #202020;
+    min-height:390px;
+    display:grid;
+    place-items:center;
+    overflow:hidden
+}
+
+.video video{
+    display:block
+}
+
+.note{
+    margin-top:10px;
+    font-size:12px
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px
+}
+
+.card{
+    background:#fff;
+    border:2px solid #202020;
+    padding:22px
+}
+
+.num{
+    font-size:12px;
+    font-weight:700
+}
+
+.card h3{
+    margin:25px 0 10px;
+    font-size:20px
+}
+
+.card p{
+    line-height:1.55;
+    margin:0
+}
+
+.quote{
+    margin-top:22px;
+    padding:24px;
+    border-left:5px solid #202020;
+    background:#ecece7;
+    font-size:21px;
+    line-height:1.4
+}
+
+.footer{
+    padding-top:35px;
+    font-size:13px;
+    display:flex;
+    justify-content:space-between;
+    border-top:2px solid #202020
+}
+
+@media(max-width:800px){
+
+    .hero{
+        grid-template-columns:1fr
+    }
+
+    .grid{
+        grid-template-columns:1fr
+    }
+
+    .video{
+        min-height:260px
+    }
+
+    h1{
+        font-size:58px
+    }
+
+    .section{
+        padding:42px 0
+    }
+
+    .footer{
+        display:block;
+        line-height:1.8
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+<div class="wrap">
+
+<header class="nav">
+    <div class="brand">HORRIBLE WEATHER APP</div>
+    <div class="tag">a small coding project</div>
+</header>
+
+<section class="hero">
+
+    <div>
+        <div class="eyebrow">My weather app project</div>
+
+        <h1>
+            Weather, but
+            <span>less convenient.</span>
+        </h1>
+
+        <p class="lead">
+            I started with a normal weather app and then decided to
+            experiment with bad UX without breaking the actual weather feature.
+        </p>
+    </div>
+
+    <div>
+        <p class="lead">
+            Six sliders are used to enter the city name,
+            and the weather button is further down the page.
+        </p>
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-head">
+
+        <h2>Watch it work</h2>
+
+        <p>
+            This is the app running. The video shows how a city is entered,
+            how the interface is navigated, and what happens when the
+            weather is finally requested.
+        </p>
+
+    </div>
+
+    <div class="video" id="videoBox">
+
+        <video controls width="100%">
+            <source src="Weather_App.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+
+    </div>
+
+    <div class="note">
+        The demo is about 40 seconds long.
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-head">
+
+        <h2>What I changed</h2>
+
+        <p>
+            The main idea was simple: keep the weather lookup working,
+            but make some normal interactions unnecessarily inconvenient.
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+        <article class="card">
+
+            <div class="num">01</div>
+
+            <h3>Entering a city</h3>
+
+            <p>
+                I used six vertical sliders instead of giving the user
+                a normal text-entry experience.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="num">02</div>
+
+            <h3>Finding the button</h3>
+
+            <p>
+                The weather button is lower down in the scroll area,
+                so it takes a little more effort to reach.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="num">03</div>
+
+            <h3>Showing the result</h3>
+
+            <p>
+                The app displays the real weather along with
+                sarcastic comments and emojis.
+            </p>
+
+        </article>
+
+    </div>
+
+
+    <div class="quote">
+        The app still does its job. I just made getting there unnecessarily complicated.
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-head">
+
+        <h2>What I was trying to learn</h2>
+
+        <p>
+            This project was mainly an experiment with PyQt5, layouts,
+            widgets, scrolling, and making a working interface behave
+            in an unusual way.
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+        <article class="card">
+
+            <div class="num">PYQT5</div>
+
+            <h3>Widgets and layouts</h3>
+
+            <p>
+                I worked with labels, sliders, buttons, layouts,
+                and a scroll area to build the interface.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="num">UX</div>
+
+            <h3>Designing friction</h3>
+
+            <p>
+                I wanted the interface to look reasonably clean
+                while making the interactions less convenient.
+            </p>
+
+        </article>
+
+
+        <article class="card">
+
+            <div class="num">EXPERIMENT</div>
+
+            <h3>Still functional</h3>
+
+            <p>
+                The point was not to break the app.
+                The weather lookup still needs to work.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<footer class="footer">
+
+    <span>Bad Weather App · showcase</span>
+
+    <span>
+        Built to function. Designed to inconvenience.
+    </span>
+
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>
